@@ -3,6 +3,8 @@ import {useNavigation} from '@react-navigation/native';
 import {Header, Icon, Divider} from 'react-native-elements';
 import {View, TouchableOpacity, StyleSheet, Text} from 'react-native';
 
+import MoreMenu from '../components/android/MoreMenu';
+
 export default function HomeScreen() {
   const {openDrawer} = useNavigation();
   const styles = StyleSheet.create({
@@ -13,8 +15,8 @@ export default function HomeScreen() {
       <Header
         placement="left"
         backgroundColor="#fff"
-        centerComponent={() => <Text style={styles.brand}>Summerbook</Text>}
-        leftComponent={() => (
+        centerComponent={<Text style={styles.brand}>Summerbook</Text>}
+        leftComponent={(
           <TouchableOpacity onPress={() => openDrawer()}>
             <Icon
               name="menu"
@@ -22,12 +24,7 @@ export default function HomeScreen() {
             />
           </TouchableOpacity>
         )}
-        rightComponent={() => (
-          <Icon
-            name="dots-horizontal"
-            type="material-community"
-          />
-        )}
+        rightComponent={<MoreMenu/>}
       />
       <Divider/>
     </View>
