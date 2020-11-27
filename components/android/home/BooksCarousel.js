@@ -43,13 +43,11 @@ export default function BooksSlider() {
       fontSize: 20,
       fontWeight: 'bold',
     },
-    book_author: {color: '#888'},
-    list_label: {
-      marginHorizontal: 16,
-      textTransform: 'uppercase',
-      fontSize: 12,
+    book_author: {
       color: '#888',
+      marginBottom: 8,
     },
+    book_desc: {color: '#888'},
   });
   return (
     <View style={styles.container}>
@@ -76,6 +74,7 @@ export default function BooksSlider() {
       <View style={styles.book_detail}>
         <Text style={styles.book_title}>Don&apos;t Go There</Text>
         <Text style={styles.book_author}>by Juliana Silva</Text>
+        <Text style={styles.book_desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus delectus voluptatibus sed iste, tempora obcaecati blanditiis quae earum incidunt optio non iure libero tenetur. Odit.</Text>
       </View>
       <View>
         {[1, 2, 3].map((i) => (
