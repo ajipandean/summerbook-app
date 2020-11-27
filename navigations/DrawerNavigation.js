@@ -24,9 +24,9 @@ export default function DrawerNavigation() {
           name={s.name}
           component={s.component}
           options={{
-            drawerIcon: ({size, color}) => (
+            drawerIcon: ({focused, size, color}) => (
               <MaterialCommunityIcons
-                name={s.icon}
+                name={focused ? s.icon.active : s.icon.inactive}
                 size={size}
                 color={color}
               />
