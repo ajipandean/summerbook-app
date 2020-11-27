@@ -1,9 +1,10 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Header, Icon, Divider} from 'react-native-elements';
-import {View, TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {View, ScrollView, TouchableOpacity, StyleSheet, Text} from 'react-native';
 
 import MoreMenu from '../components/android/MoreMenu';
+import BooksCarousel from '../components/android/home/BooksCarousel';
 
 export default function HomeScreen() {
   const {openDrawer} = useNavigation();
@@ -11,7 +12,7 @@ export default function HomeScreen() {
     brand: {fontSize: 20},
   });
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Header
         placement="left"
         backgroundColor="#fff"
@@ -27,6 +28,9 @@ export default function HomeScreen() {
         rightComponent={<MoreMenu/>}
       />
       <Divider/>
+      <ScrollView>
+        <BooksCarousel/>
+      </ScrollView>
     </View>
   );
 }
