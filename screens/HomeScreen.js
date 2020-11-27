@@ -7,7 +7,7 @@ import MoreMenu from '../components/android/MoreMenu';
 import BooksCarousel from '../components/android/home/BooksCarousel';
 
 export default function HomeScreen() {
-  const {openDrawer} = useNavigation();
+  const {openDrawer, navigate} = useNavigation();
   const styles = StyleSheet.create({
     brand: {fontSize: 20},
   });
@@ -29,7 +29,7 @@ export default function HomeScreen() {
       />
       <Divider/>
       <ScrollView>
-        <BooksCarousel/>
+        <BooksCarousel navigate={navigate}/>
       </ScrollView>
     </View>
   );

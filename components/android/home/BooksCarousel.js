@@ -1,9 +1,16 @@
 import React, {useRef} from 'react';
 import {ListItem} from 'react-native-elements';
-import {View, Image, Text, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-export default function BooksSlider() {
+export default function BooksSlider({navigate}) {
   const carouselRef = useRef(null);
   const windowWidth = Dimensions.get('window').width;
   const images = [
@@ -47,7 +54,10 @@ export default function BooksSlider() {
       color: '#888',
       marginBottom: 8,
     },
-    book_desc: {color: '#888'},
+    book_desc: {
+      color: '#888',
+      lineHeight: 22,
+    },
   });
   return (
     <View style={styles.container}>
@@ -63,12 +73,15 @@ export default function BooksSlider() {
         activeSlideAlignment="start"
         activeAnimationType="spring"
         renderItem={({item}) => (
-          <View style={styles.image_container}>
+          <TouchableOpacity
+            onPress={() => navigate('About')}
+            style={styles.image_container}
+          >
             <Image
               style={styles.carousel_image}
               source={{uri: item}}
             />
-          </View>
+          </TouchableOpacity>
         )}
       />
       <View style={styles.book_detail}>
@@ -77,10 +90,11 @@ export default function BooksSlider() {
         <Text style={styles.book_desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus delectus voluptatibus sed iste, tempora obcaecati blanditiis quae earum incidunt optio non iure libero tenetur. Odit.</Text>
       </View>
       <View>
-        {[1, 2, 3].map((i) => (
+        {[true, true, false].map((b, i) => (
           <ListItem
             key={i}
             onPress={() => {}}
+            bottomDivider={b}
             containerStyle={{paddingVertical: 8}}
           >
             <ListItem.Content>
