@@ -22,6 +22,7 @@ export default function RootStackNavigation() {
             <Header
               placement="left"
               backgroundColor="#fff"
+              rightComponent={scene.descriptor.options.headerRight}
               leftComponent={() => <NavigationBack goBack={navigation.goBack}/>}
             />
             <Divider/>
