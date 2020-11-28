@@ -2,7 +2,7 @@ import React from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import drawerNavigationRegister from '../registers/drawerNavigationRegister';
+import mainDrawerNavigationRegister from '../registers/mainDrawerNavigationRegister';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,7 +18,7 @@ export default function DrawerNavigation() {
         },
       }}
     >
-      {drawerNavigationRegister.map((s) => (
+      {mainDrawerNavigationRegister.map((s) => (
         <Drawer.Screen
           key={s.name}
           name={s.name}

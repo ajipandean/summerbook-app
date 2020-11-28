@@ -1,8 +1,8 @@
-import DrawerNavigation from '../navigations/DrawerNavigation';
+import MainDrawerNavigation from '../navigations/MainDrawerNavigation';
 
 export default [
   {
-    name: 'DrawerNavigation',
-    component: DrawerNavigation,
+    name: 'Main',
+    component: MainDrawerNavigation,
   },
 ];
