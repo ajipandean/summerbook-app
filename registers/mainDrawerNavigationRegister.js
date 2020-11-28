@@ -1,9 +1,5 @@
-import React from 'react';
-import {View} from 'react-native';
-
 import HomeScreen from '../screens/HomeScreen';
-
-const Settings = () => <View/>;
+import SettingsScreen from '../screens/SettingsScreen';
 
 export default [
   {
@@ -15,7 +11,7 @@ export default [
   {
     name: 'Settings',
     icon: 'settings-outline',
-    component: Settings,
+    component: SettingsScreen,
     options: {},
   },
 ];
