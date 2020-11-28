@@ -48,11 +48,13 @@ export default function BooksSlider({navigate}) {
     },
     book_title: {
       fontSize: 20,
+      marginBottom: 4,
       fontWeight: 'bold',
     },
     book_author: {
       color: '#888',
       marginBottom: 8,
+      fontSize: 12,
     },
     book_desc: {
       color: '#888',
