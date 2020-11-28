@@ -17,6 +17,13 @@ export default [
   {
     name: 'Detail',
     component: DetailScreen,
-    options: {headerShown: true},
+    options: {
+      headerShown: true,
+      gestureEnabled: true,
+      gestureDirection: 'horizontal',
+      gestureResponseDistance: {
+        horizontal: 130,
+      },
+    },
   },
 ];
