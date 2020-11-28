@@ -11,17 +11,20 @@ export default function SettingsStackNavigation() {
   return (
     <Stack.Navigator
       screenOptions={{
-        header: ({scene, navigation}) => (
-          <Fragment>
-            <Header
-              placement="left"
-              backgroundColor="#fff"
-              centerComponent={() => <Text h4>{scene.route.name}</Text>}
-              leftComponent={() => <NavigationBack goBack={navigation.goBack}/>}
-            />
-            <Divider/>
-          </Fragment>
-        ),
+        header: ({scene, navigation}) => {
+          console.log(scene);
+          return (
+            <Fragment>
+              <Header
+                placement="left"
+                backgroundColor="#fff"
+                centerComponent={() => <Text h4>{scene.descriptor.options.title}</Text>}
+                leftComponent={() => <NavigationBack goBack={navigation.goBack}/>}
+              />
+              <Divider/>
+            </Fragment>
+          );
+        },
       }}
     >
       {settingsStackNavigationRegister.map((s) => (

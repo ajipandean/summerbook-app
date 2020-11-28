@@ -23,7 +23,7 @@ export default function DrawerNavigation() {
             <Header
               placement="left"
               backgroundColor="#fff"
-              centerComponent={() => <Text h4>{scene.route.name}</Text>}
+              centerComponent={() => <Text h4>{scene.descriptor.options.title}</Text>}
               leftComponent={() => <DrawerToggle navigation={scene.descriptor.navigation}/>}
             />
             <Divider/>

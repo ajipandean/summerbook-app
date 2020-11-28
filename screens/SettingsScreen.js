@@ -7,7 +7,7 @@ const lists = [
   {
     items: [
       {
-        title: 'About',
+        title: 'Tentang',
         icon: 'information-outline',
         onPress: (navigate) => navigate('SettingsStack', {screen: 'About'}),
         bottomDivider: false,
@@ -17,13 +17,13 @@ const lists = [
   {
     items: [
       {
-        title: 'Send feedback',
+        title: 'Kirim feedback',
         icon: null,
         onPress: (navigate) => {},
         bottomDivider: true,
       },
       {
-        title: 'Rate Summerbook on Google Play',
+        title: 'Beri peringkat di Google Play',
         icon: null,
         onPress: (navigate) => {},
         bottomDivider: false,

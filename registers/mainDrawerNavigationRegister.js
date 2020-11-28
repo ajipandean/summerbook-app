@@ -6,12 +6,16 @@ export default [
     name: 'Home',
     icon: 'home-variant-outline',
     component: HomeScreen,
-    options: {},
+    options: {
+      title: 'Beranda',
+    },
   },
   {
     name: 'Settings',
     icon: 'settings-outline',
     component: SettingsScreen,
-    options: {},
+    options: {
+      title: 'Pengaturan',
+    },
   },
 ];
