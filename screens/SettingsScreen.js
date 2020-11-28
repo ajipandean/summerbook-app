@@ -5,7 +5,6 @@ import {ListItem} from 'react-native-elements';
 
 const lists = [
   {
-    section: 'App',
     items: [
       {
         title: 'About',
@@ -16,13 +15,13 @@ const lists = [
       {
         title: 'Terms of service',
         icon: null,
-        onPress: (navigate) => {},
+        onPress: (navigate) => navigate('SettingsStack', {screen: 'Terms of service'}),
         bottomDivider: true,
       },
       {
         title: 'Privacy policy',
         icon: null,
-        onPress: (navigate) => {},
+        onPress: (navigate) => navigate('SettingsStack', {screen: 'Privacy policy'}),
         bottomDivider: false,
       },
     ],
@@ -30,13 +29,13 @@ const lists = [
   {
     items: [
       {
-        title: 'Rate Summerbook',
+        title: 'Send feedback',
         icon: null,
         onPress: (navigate) => {},
         bottomDivider: true,
       },
       {
-        title: 'Send feedback',
+        title: 'Rate Summerbook on Google Play',
         icon: null,
         onPress: (navigate) => {},
         bottomDivider: false,
