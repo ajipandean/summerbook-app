@@ -1,19 +1,13 @@
-import React from 'react';
-import {Text} from 'react-native';
-
 import MainDrawerNavigation from '../navigations/MainDrawerNavigation';
-
-const Test = () => <Text>Ahisap</Text>;
+import SettingsStackNavigation from '../navigations/SettingsStackNavigation';
 
 export default [
   {
-    name: 'Main',
+    name: 'MainDrawer',
     component: MainDrawerNavigation,
-    options: {headerShown: false},
   },
   {
-    name: 'About',
-    component: Test,
-    options: {},
+    name: 'SettingsStack',
+    component: SettingsStackNavigation,
   },
 ];

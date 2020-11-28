@@ -10,7 +10,7 @@ const lists = [
       {
         title: 'About',
         icon: 'information-outline',
-        onPress: (navigate) => navigate('About'),
+        onPress: (navigate) => navigate('SettingsStack', {screen: 'About'}),
         bottomDivider: true,
       },
       {
