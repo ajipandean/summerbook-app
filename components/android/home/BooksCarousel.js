@@ -74,7 +74,7 @@ export default function BooksSlider({navigate}) {
         activeAnimationType="spring"
         renderItem={({item}) => (
           <TouchableOpacity
-            onPress={() => navigate('About')}
+            onPress={() => navigate('Detail')}
             style={styles.image_container}
           >
             <Image
