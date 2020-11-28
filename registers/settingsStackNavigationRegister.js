@@ -9,14 +9,4 @@ export default [
     component: Test,
     options: {},
   },
-  {
-    name: 'Terms of service',
-    component: Test,
-    options: {},
-  },
-  {
-    name: 'Privacy policy',
-    component: Test,
-    options: {},
-  },
 ];

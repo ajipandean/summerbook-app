@@ -10,18 +10,6 @@ const lists = [
         title: 'About',
         icon: 'information-outline',
         onPress: (navigate) => navigate('SettingsStack', {screen: 'About'}),
-        bottomDivider: true,
-      },
-      {
-        title: 'Terms of service',
-        icon: null,
-        onPress: (navigate) => navigate('SettingsStack', {screen: 'Terms of service'}),
-        bottomDivider: true,
-      },
-      {
-        title: 'Privacy policy',
-        icon: null,
-        onPress: (navigate) => navigate('SettingsStack', {screen: 'Privacy policy'}),
         bottomDivider: false,
       },
     ],
