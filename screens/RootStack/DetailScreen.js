@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image} from 'react-native-elements';
+import {Text, Image, Button} from 'react-native-elements';
 import {View, StyleSheet, ScrollView} from 'react-native';
 
 import InfoBox from '../../components/android/detail/InfoBox';
@@ -36,6 +36,10 @@ export default function DetailScreen() {
     desc: {
       textAlign: 'center',
       color: '#888',
+      marginBottom: 16,
+    },
+    button: {
+      width: '100%',
     },
   });
   return (
@@ -49,6 +53,16 @@ export default function DetailScreen() {
           <Text h4 h4Style={styles.title}>Water Shame Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
           <Text style={styles.author}>oleh Alenjandra Vega P. E. Padilla</Text>
           <Text style={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, in.</Text>
+          <Button
+            title="Beli di Gramedia"
+            containerStyle={styles.button}
+            icon={{
+              name: 'cart-outline',
+              size: 24,
+              color: 'white',
+              type: 'material-community',
+            }}
+          />
         </View>
         <InfoBox
           head="Apa yang dibahas dalam buku ini?"
