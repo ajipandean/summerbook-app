@@ -9,26 +9,20 @@ const Settings = () => <View/>;
 export default [
   {
     name: 'Home',
-    icon: {
-      active: 'home-variant',
-      inactive: 'home-variant-outline',
-    },
+    icon: 'home-variant-outline',
     component: HomeScreen,
+    options: {},
   },
   {
     name: 'About',
-    icon: {
-      active: 'information',
-      inactive: 'information-outline',
-    },
+    icon: 'information-outline',
     component: About,
+    options: {},
   },
   {
     name: 'Settings',
-    icon: {
-      active: 'settings',
-      inactive: 'settings-outline',
-    },
+    icon: 'settings-outline',
     component: Settings,
+    options: {},
   },
 ];
