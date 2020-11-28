@@ -10,19 +10,19 @@ const lists = [
         title: 'About',
         icon: 'information-outline',
         onPress: () => {},
-        separator: true,
+        bottomDivider: true,
       },
       {
         title: 'Terms of service',
         icon: null,
         onPress: () => {},
-        separator: true,
+        bottomDivider: true,
       },
       {
         title: 'Privacy policy',
         icon: null,
         onPress: () => {},
-        separator: false,
+        bottomDivider: false,
       },
     ],
   },
@@ -32,13 +32,13 @@ const lists = [
         title: 'Rate Summerbook',
         icon: null,
         onPress: () => {},
-        separator: true,
+        bottomDivider: true,
       },
       {
         title: 'Send feedback',
         icon: null,
         onPress: () => {},
-        separator: false,
+        bottomDivider: false,
       },
     ],
   },
@@ -63,7 +63,7 @@ export default function SettingsScreen() {
           {list.items.map((item, i) => (
             <ListItem
               key={i}
-              bottomDivider={item.separator}
+              bottomDivider={item.bottomDivider}
               onPress={() => {}}
               containerStyle={{paddingVertical: 8}}
             >
