@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native';
 import {ListItem} from 'react-native-elements';
 
@@ -9,19 +10,19 @@ const lists = [
       {
         title: 'About',
         icon: 'information-outline',
-        onPress: () => {},
+        onPress: (navigate) => navigate('About'),
         bottomDivider: true,
       },
       {
         title: 'Terms of service',
         icon: null,
-        onPress: () => {},
+        onPress: (navigate) => {},
         bottomDivider: true,
       },
       {
         title: 'Privacy policy',
         icon: null,
-        onPress: () => {},
+        onPress: (navigate) => {},
         bottomDivider: false,
       },
     ],
@@ -31,13 +32,13 @@ const lists = [
       {
         title: 'Rate Summerbook',
         icon: null,
-        onPress: () => {},
+        onPress: (navigate) => {},
         bottomDivider: true,
       },
       {
         title: 'Send feedback',
         icon: null,
-        onPress: () => {},
+        onPress: (navigate) => {},
         bottomDivider: false,
       },
     ],
@@ -45,6 +46,7 @@ const lists = [
 ];
 
 export default function SettingsScreen() {
+  const {navigate} = useNavigation();
   const styles = StyleSheet.create({
     list_container: {
       marginTop: 8,
@@ -64,7 +66,7 @@ export default function SettingsScreen() {
             <ListItem
               key={i}
               bottomDivider={item.bottomDivider}
-              onPress={() => {}}
+              onPress={() => item.onPress(navigate)}
               containerStyle={{paddingVertical: 8}}
             >
               <ListItem.Content>
