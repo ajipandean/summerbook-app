@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, ScrollView} from 'react-native';
 
-import BooksCarousel from '../components/android/home/BooksCarousel';
+import BooksCarousel from '../../components/android/home/BooksCarousel';
 
 export default function HomeScreen() {
   const {navigate} = useNavigation();
