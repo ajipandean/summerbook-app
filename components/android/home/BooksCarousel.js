@@ -86,7 +86,7 @@ export default function BooksSlider({navigate}) {
       />
       <View style={styles.book_detail}>
         <Text style={styles.book_title}>Don&apos;t Go There</Text>
-        <Text style={styles.book_author}>by Juliana Silva</Text>
+        <Text style={styles.book_author}>oleh Juliana Silva</Text>
         <Text style={styles.book_desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus delectus voluptatibus sed iste, tempora obcaecati blanditiis quae earum incidunt optio non iure libero tenetur. Odit.</Text>
       </View>
       <View>
@@ -98,8 +98,8 @@ export default function BooksSlider({navigate}) {
             containerStyle={{paddingVertical: 8}}
           >
             <ListItem.Content>
-              <ListItem.Title>Summarised by Aji Pandean</ListItem.Title>
-              <ListItem.Subtitle>8 outlines &bull; 5 mins &bull; 456 likes</ListItem.Subtitle>
+              <ListItem.Title>Rangkuman versi Aji Pandean</ListItem.Title>
+              <ListItem.Subtitle>8 outline &bull; 5 menit</ListItem.Subtitle>
             </ListItem.Content>
             <ListItem.Chevron
               size={24}
