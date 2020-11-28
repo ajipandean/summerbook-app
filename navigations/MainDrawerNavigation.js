@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
-import {Header, Divider} from 'react-native-elements';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {Text, StyleSheet} from 'react-native';
+import {Header, Divider, Text} from 'react-native-elements';
 
 import MoreMenu from '../components/android/MoreMenu';
 import DrawerToggle from '../components/android/DrawerToggle';
@@ -12,13 +11,10 @@ import mainDrawerNavigationRegister from '../registers/mainDrawerNavigationRegis
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigation() {
-  const styles = StyleSheet.create({
-    brand: {fontSize: 20},
-  });
   return (
     <Drawer.Navigator
       intialRouteName="Home"
-      drawerContent={DrawerContent}
+      drawerContent={(props) => <DrawerContent {...props}/>}
       overlayColor={0}
       drawerType="slide"
       screenOptions={{
@@ -29,7 +25,7 @@ export default function DrawerNavigation() {
               placement="left"
               backgroundColor="#fff"
               rightComponent={() => <MoreMenu/>}
-              centerComponent={() => <Text style={styles.brand}>{scene.route.name}</Text>}
+              centerComponent={() => <Text h4>{scene.route.name}</Text>}
               leftComponent={() => <DrawerToggle navigation={scene.descriptor.navigation}/>}
             />
             <Divider/>
@@ -42,7 +38,7 @@ export default function DrawerNavigation() {
       }}
       drawerContentOptions={{
         labelStyle: {fontWeight: 'bold'},
-        itemStyle: {marginVertical: 2},
+        itemStyle: {marginVertical: 0},
       }}
     >
       {mainDrawerNavigationRegister.map((s) => (
