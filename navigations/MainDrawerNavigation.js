@@ -3,7 +3,6 @@ import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Header, Divider, Text} from 'react-native-elements';
 
-import MoreMenu from '../components/android/MoreMenu';
 import DrawerToggle from '../components/android/DrawerToggle';
 import DrawerContent from '../components/android/DrawerContent';
 import mainDrawerNavigationRegister from '../registers/mainDrawerNavigationRegister';
@@ -24,8 +23,7 @@ export default function DrawerNavigation() {
             <Header
               placement="left"
               backgroundColor="#fff"
-              rightComponent={() => <MoreMenu/>}
-              centerComponent={() => <Text h4>{scene.route.name}</Text>}
+              centerComponent={() => <Text h4>{scene.descriptor.options.title}</Text>}
               leftComponent={() => <DrawerToggle navigation={scene.descriptor.navigation}/>}
             />
             <Divider/>

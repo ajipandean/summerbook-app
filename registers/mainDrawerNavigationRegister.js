@@ -1,21 +1,21 @@
-import React from 'react';
-import {View} from 'react-native';
-
 import HomeScreen from '../screens/HomeScreen';
-
-const Settings = () => <View/>;
+import SettingsScreen from '../screens/SettingsScreen';
 
 export default [
   {
     name: 'Home',
     icon: 'home-variant-outline',
     component: HomeScreen,
-    options: {},
+    options: {
+      title: 'Beranda',
+    },
   },
   {
     name: 'Settings',
     icon: 'settings-outline',
-    component: Settings,
-    options: {},
+    component: SettingsScreen,
+    options: {
+      title: 'Pengaturan',
+    },
   },
 ];
