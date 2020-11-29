@@ -22,14 +22,13 @@ export default [
       headerShown: true,
       gestureEnabled: true,
       gestureDirection: 'horizontal',
-      gestureResponseDistance: {
-        horizontal: 130,
-      },
     },
   },
   {
     name: 'Reading',
     component: ReadingScreen,
-    options: {},
+    options: {
+      headerShown: true,
+    },
   },
 ];
