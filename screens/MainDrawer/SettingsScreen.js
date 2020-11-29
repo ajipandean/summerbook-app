@@ -3,35 +3,6 @@ import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native';
 import {ListItem} from 'react-native-elements';
 
-const lists = [
-  {
-    items: [
-      {
-        title: 'Tentang',
-        icon: 'information-outline',
-        onPress: (navigate) => navigate('SettingsStack', {screen: 'About'}),
-        bottomDivider: false,
-      },
-    ],
-  },
-  {
-    items: [
-      {
-        title: 'Kirim feedback',
-        icon: null,
-        onPress: (navigate) => {},
-        bottomDivider: true,
-      },
-      {
-        title: 'Beri peringkat di Google Play',
-        icon: null,
-        onPress: (navigate) => {},
-        bottomDivider: false,
-      },
-    ],
-  },
-];
-
 export default function SettingsScreen() {
   const {navigate} = useNavigation();
   const styles = StyleSheet.create({
@@ -42,18 +13,42 @@ export default function SettingsScreen() {
       borderBottomWidth: 1,
     },
   });
+  const lists = [
+    [
+      {
+        title: 'Tentang',
+        icon: 'information-outline',
+        onPress: () => navigate('SettingsStack', {screen: 'About'}),
+        bottomDivider: false,
+      },
+    ],
+    [
+      {
+        title: 'Kirim feedback',
+        icon: null,
+        onPress: () => {},
+        bottomDivider: true,
+      },
+      {
+        title: 'Beri peringkat di Google Play',
+        icon: null,
+        onPress: () => {},
+        bottomDivider: false,
+      },
+    ],
+  ];
   return (
     <View style={{flex: 1}}>
-      {lists.map((list, i) => (
+      {lists.map((items, i) => (
         <View
           key={i}
           style={styles.list_container}
         >
-          {list.items.map((item, i) => (
+          {items.map((item, i) => (
             <ListItem
               key={i}
               bottomDivider={item.bottomDivider}
-              onPress={() => item.onPress(navigate)}
+              onPress={item.onPress}
               containerStyle={{paddingVertical: 8}}
             >
               <ListItem.Content>
