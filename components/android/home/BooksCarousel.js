@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {ListItem} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 import {
   View,
   Image,
@@ -61,7 +61,9 @@ export default function BooksSlider() {
     book_desc: {
       color: '#888',
       lineHeight: 22,
+      marginBottom: 16,
     },
+    button: {width: '100%'},
   });
   return (
     <View style={styles.container}>
@@ -92,21 +94,11 @@ export default function BooksSlider() {
         <Text style={styles.book_title}>Don&apos;t Go There</Text>
         <Text style={styles.book_author}>oleh Juliana Silva</Text>
         <Text style={styles.book_desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus delectus voluptatibus sed iste, tempora obcaecati blanditiis quae earum incidunt optio non iure libero tenetur. Odit.</Text>
-      </View>
-      <View>
-        <ListItem
+        <Button
+          title="Baca ringkasan"
           onPress={() => navigate('Reading')}
-          containerStyle={{paddingVertical: 8}}
-        >
-          <ListItem.Content>
-            <ListItem.Title>Rangkuman versi Aji Pandean</ListItem.Title>
-            <ListItem.Subtitle>8 outline &bull; 5 menit</ListItem.Subtitle>
-          </ListItem.Content>
-          <ListItem.Chevron
-            size={24}
-            color="#888"
-          />
-        </ListItem>
+          containerStyle={styles.button}
+        />
       </View>
     </View>
   );

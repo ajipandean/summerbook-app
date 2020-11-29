@@ -1,11 +1,12 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {Text, Image, Button} from 'react-native-elements';
 import {View, StyleSheet, ScrollView} from 'react-native';
 
 import InfoBox from '../../components/android/detail/InfoBox';
-import SummariesBox from '../../components/android/detail/SummariesBox';
 
 export default function DetailScreen() {
+  const {navigate} = useNavigation();
   const styles = StyleSheet.create({
     box: {
       backgroundColor: 'white',
@@ -54,14 +55,9 @@ export default function DetailScreen() {
           <Text style={styles.author}>oleh Alenjandra Vega P. E. Padilla</Text>
           <Text style={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, in.</Text>
           <Button
-            title="Beli di Gramedia"
+            title="Baca ringkasan"
+            onPress={() => navigate('Reading')}
             containerStyle={styles.button}
-            icon={{
-              name: 'cart-outline',
-              size: 24,
-              color: 'white',
-              type: 'material-community',
-            }}
           />
         </View>
         <InfoBox
@@ -76,7 +72,6 @@ export default function DetailScreen() {
           head="Tentang penulis buku ini"
           body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis nesciunt rem, error dicta id fuga temporibus ipsa porro molestiae. Error quisquam tempore aliquam quibusdam modi, at adipisci repudiandae, repellendus nemo, fuga voluptates commodi culpa atque blanditiis. Quos soluta veniam sed non eveniet, quis nostrum pariatur qui similique ratione, expedita doloribus."
         />
-        <SummariesBox/>
       </ScrollView>
     </View>
   );
