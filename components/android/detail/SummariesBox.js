@@ -1,32 +1,10 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {View, StyleSheet} from 'react-native';
 import {Text, ListItem} from 'react-native-elements';
 
-const items = [
-  {
-    title: 'Ringkasan versi Aji Pandean',
-    outline: 8,
-    minutes: 4,
-    onPress: () => {},
-    bottomDivider: true,
-  },
-  {
-    title: 'Ringkasan versi Ashiap mantuls',
-    outline: 8,
-    minutes: 4,
-    onPress: () => {},
-    bottomDivider: true,
-  },
-  {
-    title: 'Ringkasan versi Kampuretto',
-    outline: 8,
-    minutes: 4,
-    onPress: () => {},
-    bottomDivider: false,
-  },
-];
-
 export default function SummariesBox() {
+  const {navigate} = useNavigation();
   const styles = StyleSheet.create({
     container: {
       paddingTop: 16,
@@ -43,6 +21,15 @@ export default function SummariesBox() {
       marginBottom: 8,
     },
   });
+  const items = [
+    {
+      title: 'Ringkasan versi Aji Pandean',
+      outline: 8,
+      minutes: 4,
+      onPress: () => navigate('Reading'),
+      bottomDivider: false,
+    },
+  ];
   return (
     <View style={styles.container}>
       <Text h4 h4Style={styles.head}>3 ringkasan</Text>

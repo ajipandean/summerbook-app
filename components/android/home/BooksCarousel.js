@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {ListItem} from 'react-native-elements';
 import {
   View,
@@ -10,8 +11,9 @@ import {
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-export default function BooksSlider({navigate}) {
+export default function BooksSlider() {
   const carouselRef = useRef(null);
+  const {navigate} = useNavigation();
   const windowWidth = Dimensions.get('window').width;
   const images = [
     'https://marketplace.canva.com/EAD7YH8bebE/1/0/251w/canva-white-bold-text-thriller-mystery-book-cover-CejxvxrTCyg.jpg',
@@ -92,23 +94,19 @@ export default function BooksSlider({navigate}) {
         <Text style={styles.book_desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus delectus voluptatibus sed iste, tempora obcaecati blanditiis quae earum incidunt optio non iure libero tenetur. Odit.</Text>
       </View>
       <View>
-        {[true, true, false].map((b, i) => (
-          <ListItem
-            key={i}
-            onPress={() => {}}
-            bottomDivider={b}
-            containerStyle={{paddingVertical: 8}}
-          >
-            <ListItem.Content>
-              <ListItem.Title>Rangkuman versi Aji Pandean</ListItem.Title>
-              <ListItem.Subtitle>8 outline &bull; 5 menit</ListItem.Subtitle>
-            </ListItem.Content>
-            <ListItem.Chevron
-              size={24}
-              color="#888"
-            />
-          </ListItem>
-        ))}
+        <ListItem
+          onPress={() => navigate('Reading')}
+          containerStyle={{paddingVertical: 8}}
+        >
+          <ListItem.Content>
+            <ListItem.Title>Rangkuman versi Aji Pandean</ListItem.Title>
+            <ListItem.Subtitle>8 outline &bull; 5 menit</ListItem.Subtitle>
+          </ListItem.Content>
+          <ListItem.Chevron
+            size={24}
+            color="#888"
+          />
+        </ListItem>
       </View>
     </View>
   );
