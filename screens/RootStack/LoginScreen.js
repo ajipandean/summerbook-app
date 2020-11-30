@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, ScrollView, Image, StyleSheet} from 'react-native';
 import {Button, Input} from 'react-native-elements';
@@ -7,6 +7,7 @@ import bookReadingIllustration from '../../assets/illustrations/book_reading.png
 
 export default function LoginScreen() {
   const {navigate} = useNavigation();
+  const [showPassword, setShowPassword] = useState(false);
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -44,7 +45,7 @@ export default function LoginScreen() {
             }}
           />
           <Input
-            secureTextEntry
+            secureTextEntry={!showPassword}
             label="Password"
             placeholder="******"
             inputContainerStyle={{width: '100%'}}
@@ -55,10 +56,10 @@ export default function LoginScreen() {
               style: {marginRight: 8},
             }}
             rightIcon={{
-              name: 'eye-outline',
+              name: showPassword ? 'eye-outline' : 'eye-off-outline',
               type: 'material-community',
               color: '#888',
-              onPress: () => {},
+              onPress: () => setShowPassword(!showPassword),
             }}
           />
           <Button
