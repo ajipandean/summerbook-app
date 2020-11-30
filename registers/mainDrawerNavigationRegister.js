@@ -1,5 +1,6 @@
 import HomeScreen from '../screens/MainDrawer/HomeScreen';
 import SettingsScreen from '../screens/MainDrawer/SettingsScreen';
+import ProfileScreen from '../screens/MainDrawer/ProfileScreen';
 
 export default [
   {
@@ -8,6 +9,14 @@ export default [
     component: HomeScreen,
     options: {
       title: 'Beranda',
+    },
+  },
+  {
+    name: 'Profile',
+    icon: 'account-circle-outline',
+    component: ProfileScreen,
+    options: {
+      title: 'Profil',
     },
   },
   {
