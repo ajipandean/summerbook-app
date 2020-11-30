@@ -64,6 +64,11 @@ export default function LoginScreen() {
           />
           <Button
             title="Login"
+            containerStyle={{
+              alignSelf: 'flex-end',
+              width: 80,
+              marginRight: 10,
+            }}
             onPress={() => navigate('MainDrawer', {screen: 'Home'})}
           />
         </View>
