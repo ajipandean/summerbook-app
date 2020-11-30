@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 export default function RootStackNavigation() {
   return (
     <Stack.Navigator
-      initialRouteName="MainDrawer"
+      initialRouteName="Welcome"
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,

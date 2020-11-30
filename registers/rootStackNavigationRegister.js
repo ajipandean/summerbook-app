@@ -1,10 +1,22 @@
 import MainDrawerNavigation from '../navigations/MainDrawerNavigation';
 import SettingsStackNavigation from '../navigations/SettingsStackNavigation';
 
+import WelcomeScreen from '../screens/RootStack/WelcomeScreen';
+import LoginScreen from '../screens/RootStack/LoginScreen';
 import DetailScreen from '../screens/RootStack/DetailScreen';
 import ReadingScreen from '../screens/RootStack/ReadingScreen';
 
 export default [
+  {
+    name: 'Welcome',
+    component: WelcomeScreen,
+    options: {},
+  },
+  {
+    name: 'Login',
+    component: LoginScreen,
+    options: {},
+  },
   {
     name: 'MainDrawer',
     component: MainDrawerNavigation,
