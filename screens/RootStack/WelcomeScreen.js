@@ -50,9 +50,11 @@ export default function WelcomeScreen() {
               style={{
                 marginTop: 20,
                 textAlign: 'center',
+                color: '#888',
               }}
+              onPress={() => navigate('Register')}
             >
-              Don&apos;t have an account? Sign up
+              Don&apos;t have an account? Register here
             </Text>
           </View>
         </View>
