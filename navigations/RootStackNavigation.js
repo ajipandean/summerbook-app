@@ -3,6 +3,7 @@ import {
   createStackNavigator,
   CardStyleInterpolators,
 } from '@react-navigation/stack';
+import {ToastAndroid} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import AuthContext from '../context/AuthContext';
@@ -54,7 +55,7 @@ export default function RootStackNavigation() {
         await AsyncStorage.setItem('uid', uid);
         dispatch({type: 'LOGIN', uid});
       } catch (err) {
-        console.error(err);
+        ToastAndroid.show(err.message, ToastAndroid.LONG);
       }
     },
     async logout() {
