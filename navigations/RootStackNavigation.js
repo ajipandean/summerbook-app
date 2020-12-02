@@ -46,7 +46,6 @@ export default function RootStackNavigation() {
   }, []);
   return (
     <Stack.Navigator
-      initialRouteName="Welcome"
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
