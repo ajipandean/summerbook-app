@@ -58,6 +58,16 @@ export default function RootStackNavigation() {
         ToastAndroid.show(err.message, ToastAndroid.LONG);
       }
     },
+    async register({email, password}) {
+      try {
+        const data = await firebase.auth().createUserWithEmailAndPassword(email, password);
+        const uid = data.user.uid;
+        await AsyncStorage.setItem('uid', uid);
+        dispatch({type: 'LOGIN', uid});
+      } catch (err) {
+        ToastAndroid.show(err.message, ToastAndroid.LONG);
+      }
+    },
     async logout() {
       try {
         await AsyncStorage.removeItem('uid');
