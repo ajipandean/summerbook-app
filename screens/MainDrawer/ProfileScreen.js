@@ -19,9 +19,11 @@ export default function ProfileScreen() {
   ]);
   const {logout} = useContext(AuthContext);
   useEffect(() => {
-    const user = firebase.auth().currentUser;
-    setUser(user);
-  });
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
   const styles = StyleSheet.create({
     avatar: {
       width: 80,
