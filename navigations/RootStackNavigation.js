@@ -54,7 +54,15 @@ export default function RootStackNavigation() {
         await AsyncStorage.setItem('uid', uid);
         dispatch({type: 'LOGIN', uid});
       } catch (err) {
-        console.log(err);
+        console.error(err);
+      }
+    },
+    async logout() {
+      try {
+        await AsyncStorage.removeItem('uid');
+        dispatch({type: 'LOGOUT'});
+      } catch (err) {
+        console.error(err);
       }
     },
   }));
