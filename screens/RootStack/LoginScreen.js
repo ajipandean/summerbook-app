@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, {useState, useContext} from 'react';
 import {View, ScrollView, Image, StyleSheet} from 'react-native';
 import {Button, Input} from 'react-native-elements';
 
+import AuthContext from '../../context/AuthContext';
 import bookReadingIllustration from '../../assets/illustrations/book_reading.png';
 
 export default function LoginScreen() {
-  const {navigate} = useNavigation();
+  const {login} = useContext(AuthContext);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const styles = StyleSheet.create({
     container: {
@@ -25,6 +28,16 @@ export default function LoginScreen() {
       marginBottom: 16,
     },
   });
+  async function handleLogin() {
+    setLoading(true);
+    try {
+      await login({email, password});
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  }
   return (
     <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
       <View style={styles.container}>
@@ -36,6 +49,8 @@ export default function LoginScreen() {
           <Input
             autoFocus
             label="Email"
+            value={email}
+            onChangeText={(value) => setEmail(value)}
             placeholder="ajikun@gmail.com"
             leftIcon={{
               name: 'at',
@@ -48,6 +63,8 @@ export default function LoginScreen() {
             secureTextEntry={!showPassword}
             label="Password"
             placeholder="******"
+            value={password}
+            onChangeText={(value) => setPassword(value)}
             inputContainerStyle={{width: '100%'}}
             leftIcon={{
               name: 'lock-outline',
@@ -63,13 +80,14 @@ export default function LoginScreen() {
             }}
           />
           <Button
+            loading={loading}
             title="Login"
             containerStyle={{
               alignSelf: 'flex-end',
               width: 80,
               marginRight: 10,
             }}
-            onPress={() => navigate('MainDrawer', {screen: 'Home'})}
+            onPress={handleLogin}
           />
         </View>
       </View>
